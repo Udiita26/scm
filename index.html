@@ -1,98 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Page</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-    #login-container {
-        position: fixed;
-        top: 0;
-        right: -900px; /* Initially hides the login section */
-        width: 900px;
-        height: 900%;
-        background-color: #fff;
-        transition: right 0.3s ease;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    #login-section {
-        padding: 100px;
-        justify-items: center;
-        justify-content: center;
-        
-    }
-    h2 {
-        margin-top: 20px;
-    }
-    input[type="text"],
-    input[type="password"],
-    input[type="submit"] {
-        width: 50%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    input[type="submit"] {
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-    }
-    input[type="submit"]:hover {
-        background-color: #0056b3;
-    }
-    #login-button {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    #login-button:hover {
-        background-color: #0056b3;
-    }
-</style>
-</head>
-<body>
-    <p>this is a quiz</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <div class="quiz-container" id="quiz">
+      <div class="quiz-header">
+        <h2 id="question">Question text</h2>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" class="answer">
+            <label for="a" id="a_text">Question</label>
+          </li>
 
-<button id="login-button">Login</button>
+          <li>
+            <input type="radio" name="answer" id="b" class="answer">
+            <label for="b" id="b_text">Question</label>
+          </li>
 
-<div id="login-container">
-    <div id="login-section">
-        <h2>Login</h2>
-        <form id="login-form">
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <input type="submit" value="Login">
-        </form>
+          <li>
+            <input type="radio" name="answer" id="c" class="answer">
+            <label for="c" id="c_text">question</label>
+          </li>
+
+          <li>
+            <input type="radio" name="answer" id="d" class="answer">
+            <label for="d" id="d_text">QEuestion</label>
+          </li>
+        </ul>
+      </div>
+      <button id="submit">Submit</button>
     </div>
-</div>
-
-<script>
-    document.getElementById('login-button').addEventListener('click', function() {
-        document.getElementById('login-container').style.right = '0';
-    });
-
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        // Here you can add your login logic, for example, sending the data to a server
-        // For demonstration purposes, let's just log the username and password to the console
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        console.log("Username: " + username + ", Password: " + password);
-    });
-</script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
